@@ -1,5 +1,34 @@
 const rgb = culori.converter('rgb');
 
+/*
+const errorStyle = { backgroundColor: '#FFF0EF', border: '1px solid #FFDBDA' };
+const successStyle = { backgroundColor: '#F2F3FB', border: '1px solid #C9CAD6' };
+
+
+function setElementStyles(elementId, styles) {
+    const element = document.getElementById(elementId);
+    Object.assign(element.style, styles);
+}
+
+function updateColorInput(inputId, colorBoxId) {
+    const inputValue = document.getElementById(inputId).value;
+    const colorBox = document.getElementById(colorBoxId);
+    const color = rgb(inputValue);
+
+    if (color === undefined) {
+        setElementStyles(`${inputId}Enter`, ERROR_STYLE);
+        setElementStyles(inputId, ERROR_STYLE);
+        document.getElementById(`${inputId}Space`).textContent = "?";
+    } else {
+        setElementStyles(`${inputId}Enter`, SUCCESS_STYLE);
+        setElementStyles(inputId, SUCCESS_STYLE);
+        colorBox.style.backgroundColor = `rgb(${color.r * 255}, ${color.g * 255}, ${color.b * 255})`;
+        // Uncomment the next line if you want to display the color mode
+        // document.getElementById(`${inputId}Space`).textContent = color.mode;
+    }
+}
+*/
+
 function convert() {
     let fgInput = document.getElementById('fgInput').value;
     let fgColourBox = document.getElementById('fgColourBox');
@@ -67,7 +96,9 @@ function calculateAPCA() {
         outputDiv.textContent = 'Error';
         outputDiv.style.color = "#AC5254";
         outputDiv.style.backgroundColor = "#FFF0EF";
-    } if (validColour(fg)) {
+    } 
+    
+    /*if (validColour(fg)) {
         var outputDiv = document.getElementById('fgInput');
         outputDiv.style.backgroundColor = '#F2F3FB';
     } else {
@@ -80,6 +111,7 @@ function calculateAPCA() {
         var outputDiv = document.getElementById('bgInput');
         outputDiv.style.backgroundColor = '#FFF0EF'; 
     }
+    */
 }
 
 function validColour(colour) {
