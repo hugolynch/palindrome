@@ -57,6 +57,7 @@ section {
         font-size: 8px;
         font-family: 'IBM Plex Mono', monospace;;
         color: #9EA0AB;
+        padding: 2px;
     }
 }
 
@@ -99,4 +100,14 @@ section {
 #help:hover {
     background-color: #C9CAD6;
     border: 1px solid #AFB0BC;
+}
+
+.badge {
+    background-color: #F6F2FE;
+    color: #7C5FAB;
+    border: 1px solid #E9DFFE;
+    border-radius: 2px;
+    padding: 1px 2px;
+    margin-left: 4px
+
 }
