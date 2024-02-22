@@ -10,28 +10,29 @@ function convert() {
     let bgColour = rgb(bgInput);
 
     if (fgColour === undefined) {
-        document.getElementById('fgEnter').style.backgroundColor = 'pink';
-        document.getElementById('fgInput').style.backgroundColor = 'pink';
-
+        document.getElementById('fgEnter').style.backgroundColor = '#FFF0EF';
+        document.getElementById('fgEnter').style.border = '1px solid #FFDBDA';
+        document.getElementById('fgInput').style.backgroundColor = '#FFF0EF';
+        document.getElementById('fgSpace').textContent = "?";
     } else {
-        document.getElementById('fgEnter').style.backgroundColor = 'F2F3FB';
-        document.getElementById('fgInput').style.backgroundColor = 'F2F3FB';
+        document.getElementById('fgEnter').style.backgroundColor = '#F2F3FB';
+        document.getElementById('fgEnter').style.border = '1px solid #C9CAD6';
+        document.getElementById('fgInput').style.backgroundColor = '#F2F3FB';
         document.getElementById('fgColourBox').style.backgroundColor = `rgb(${fgColour.r*255}, ${fgColour.g*255}, ${fgColour.b*255})`;
-
-        fgColour.textContent = `rgb(${fgColour.r*255}, ${fgColour.g*255}, ${fgColour.b*255})`;
-    }
-
-    if (bgColour === undefined) {
-        document.getElementById('bgEnter').style.backgroundColor = 'pink';
-        document.getElementById('bgInput').style.backgroundColor = 'pink';
-
+        //console.log(fgColour.mode);
+        //document.getElementById('fgSpace').textContent = fgColour.mode;
+    } if (bgColour === undefined) {
+        document.getElementById('bgEnter').style.backgroundColor = '#FFF0EF';
+        document.getElementById('bgEnter').style.border = '1px solid #FFDBDA';
+        document.getElementById('bgInput').style.backgroundColor = '#FFF0EF';
     } else {
-        document.getElementById('bgEnter').style.backgroundColor = 'F2F3FB';
-        document.getElementById('bgInput').style.backgroundColor = 'F2F3FB';
+        document.getElementById('bgEnter').style.backgroundColor = '#F2F3FB';
+        document.getElementById('bgEnter').style.border = '1px solid #C9CAD6';
+        document.getElementById('bgInput').style.backgroundColor = '#F2F3FB';
         document.getElementById('bgColourBox').style.backgroundColor = `rgb(${bgColour.r*255}, ${bgColour.g*255}, ${bgColour.b*255})`;
+    };
 
-        bgColour.textContent = `rgb(${bgColour.r*255}, ${bgColour.g*255}, ${bgColour.b*255})`;
-    }
+    calculateAPCA();
 }
 
 function swap() {
@@ -53,40 +54,31 @@ function calculateAPCA() {
     let fg = rgb(fgInput);
     let bg = rgb(bgInput);
 
-    // Additional validation
     if (validColour(fg) && validColour(bg)) {
         var result = contrast(fg, bg);
-        console.log(result);
 
         var outputDiv = document.getElementById('Lc');
         outputDiv.textContent = 'Lc ' + result.toFixed(2);
-        // Reset the style for valid inputs
-        outputDiv.style.color = 'black';  // Reset text color
-        outputDiv.style.backgroundColor = 'white';  // Reset background color
+        outputDiv.style.color = document.getElementById('Lc').color = `rgb(${fg.r*255}, ${fg.g*255}, ${fg.b*255})`;
+        outputDiv.style.backgroundColor = document.getElementById('Lc').backgroundColor = `rgb(${bg.r*255}, ${bg.g*255}, ${bg.b*255})`;
 
     } else {
-        // Display 'Invalid' and change style for invalid inputs
         var outputDiv = document.getElementById('Lc');
         outputDiv.textContent = 'Error';
-        outputDiv.style.color = 'white';  // Set text color to white for better visibility
-        outputDiv.style.backgroundColor = 'red';  // Set background color to red for emphasis
-    }
-
-    if (validColour(fg)) {
+        outputDiv.style.color = "#AC5254";
+        outputDiv.style.backgroundColor = "#FFF0EF";
+    } if (validColour(fg)) {
         var outputDiv = document.getElementById('fgInput');
-        outputDiv.style.backgroundColor = 'white';
+        outputDiv.style.backgroundColor = '#F2F3FB';
     } else {
         var outputDiv = document.getElementById('fgInput');
-        outputDiv.style.backgroundColor = 'pink';
-    }
-
-    if (validColour(bg)) {
+        outputDiv.style.backgroundColor = '#FFF0EF';
+    } if (validColour(bg)) {
         var outputDiv = document.getElementById('bgInput');
-        outputDiv.style.backgroundColor = 'white';
-        
+        outputDiv.style.backgroundColor = '#F2F3FB';
     } else {
         var outputDiv = document.getElementById('bgInput');
-        outputDiv.style.backgroundColor = 'pink'; 
+        outputDiv.style.backgroundColor = '#FFF0EF'; 
     }
 }
 

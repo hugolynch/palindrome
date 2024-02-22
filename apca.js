@@ -1,6 +1,4 @@
 function sRGBtoY(srgb) {
-    console.log(srgb);
-    console.log(srgb.r);
     var r = Math.pow(srgb.r, 2.4);
     var g = Math.pow(srgb.g, 2.4);
     var b = Math.pow(srgb.b, 2.4);
@@ -14,11 +12,7 @@ function sRGBtoY(srgb) {
 }
 
 function contrast(fg, bg) {
-    console.log("contrast");
-    console.log(fg);
     var yfg = sRGBtoY(fg);
-    console.log(yfg);
-    console.log("contrast-end");
 
     var ybg = sRGBtoY(bg);
     var c = 1.14;
