@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/ibm-plex-mono-3">   
+    <script src="https://unpkg.com/culori"></script>
+    <script type="text/javascript" src="apca.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+    <title>APCA Contrast Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div id="title">
+            <h2>APCA Contrast Calculator</h2>
+            <div id="help">?</div>
+        </div>
+
+        <section>
+            <label for="fgInput">Foreground</label>
+            <div id="fgEnter">
+                <input type="text" id="fgInput" placeholder="Enter colour"/>
+                <div id="fgSpace">?</div>
+            </div>
+            <div id="fgColourBox"></div>
+            <div id="fgExtra">RGB, Hex, okLCh</div>
+        </section>
+        <section>
+            <button id="swap" onclick="swap()" onclick="calculateAPCA()">↔</button>
+        </section>
+        <section>
+            <label for="bgInput">Background</label>
+            <div id="bgEnter" class="background input">
+                <input type="text" id="bgInput" placeholder="Enter colour"/>
+                <div id="bgSpace">?</div>
+            </div>
+            <div id="bgColourBox"></div>
+            <div id="bgExtra">RGB, Hex, okLCh</div>
+        </section>
+        <section>
+            <div id="Lc">APCA</div>
+            <button id="convert" onclick="convert()">Convert</button>
+            <button id="convert" onclick="calculateAPCA()">APCA WIP</button>
+        </section>
+    </div>
+</body>
+</html>

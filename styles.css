@@ -1,0 +1,102 @@
+body {
+    background-color: #FAFBFE;
+    display: flex;
+    justify-content: center;
+    color: #13141C;
+    font-family: 'Inter', sans-serif;
+}
+
+section {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 24px 0;
+
+    label {
+        text-align: center;
+        line-height: 24px;
+        font-weight: 600;
+    }
+
+    #fgEnter, #bgEnter {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #E5E6EF;
+        padding: 7px 12px;
+        align-items: center;
+        background-color: #F2F3FB;
+        border-radius: 6px;
+
+        input {
+            border: none;
+            background-color: #F2F3FB;
+            border-radius: 0;
+            width: 100%;
+        }
+
+        #fgSpace, #bgSpace {
+            background-color: #FAFBFE;
+            padding: 2px 6px ;
+            border-radius: 6px;
+            border: 1px solid #E5E6EF;
+            font-size: 12px;
+        }
+    }
+
+    #fgColourBox, #bgColourBox {
+        border: 1px solid #E5E6EF;
+        padding: 0px 12px;
+        align-items: center;
+        border-radius: 6px;
+        min-height: 24px;
+    }
+
+    #fgExtra, #bgExtra {
+        text-align: center;
+        font-size: 8px;
+        font-family: 'IBM Plex Mono', monospace;;
+        color: #9EA0AB;
+    }
+}
+
+#swap, button {
+    background-color: #E3E5EF;
+    border: 1px solid #C9CAD6;
+    border-radius: 6px;
+    padding: 7px 12px;
+}
+
+#swap:hover, button:hover {
+    background-color: #C9CAD6;
+    border: 1px solid #AFB0BC;
+}
+
+#Lc {
+    border: 1px solid red;
+    text-align: center;
+    font-size: 32px;
+    padding: 48px;
+    border-radius: 6px;
+    background-color: #E3E5EF;
+    border: 1px solid #C9CAD6;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+}
+
+#help {
+    background-color: #E3E5EF;
+    border: 1px solid #C9CAD6;
+    border-radius: 6px;
+    padding: 2px 6px ;
+    font-size: 12px;
+    margin-left: 24px;
+}
+
+#help:hover {
+    background-color: #C9CAD6;
+    border: 1px solid #AFB0BC;
+}
