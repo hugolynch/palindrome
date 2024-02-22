@@ -30,7 +30,7 @@ section {
 
         input {
             border: none;
-            background-color: #F2F3FB;
+            background-color: inherit;
             border-radius: 0;
             width: 100%;
         }
