@@ -19,7 +19,7 @@ section {
         font-weight: 600;
     }
 
-    #fgEnter, #bgEnter {
+    #fgEnter, #bgEnter, #convertEnter {
         display: flex;
         justify-content: space-between;
         border: 1px solid #E5E6EF;
@@ -35,7 +35,7 @@ section {
             width: 100%;
         }
 
-        #fgSpace, #bgSpace {
+        #fgSpace, #bgSpace, #convertSpace {
             background-color: #FAFBFE;
             padding: 2px 6px ;
             border-radius: 6px;
@@ -44,7 +44,7 @@ section {
         }
     }
 
-    #fgColourBox, #bgColourBox {
+    #fgColourBox, #bgColourBox, #convertColourBox {
         border: 1px solid #E5E6EF;
         padding: 0px 12px;
         align-items: center;
@@ -52,7 +52,7 @@ section {
         min-height: 24px;
     }
 
-    #fgExtra, #bgExtra {
+    #fgExtra, #bgExtra, #convertExtra {
         text-align: center;
         font-size: 8px;
         font-family: 'IBM Plex Mono', monospace;;
@@ -71,10 +71,10 @@ section {
 #swap:hover, button:hover {
     background-color: #C9CAD6;
     border: 1px solid #AFB0BC;
+    cursor: pointer;
 }
 
 #Lc {
-    border: 1px solid red;
     text-align: center;
     font-size: 32px;
     padding: 48px;
@@ -83,14 +83,16 @@ section {
     border: 1px solid #C9CAD6;
 }
 
-#title {
+.title {
     display: flex;
     align-items: center;
+    height: 32px;
+    color: #544076;
 }
 
 #help {
-    background-color: #E3E5EF;
-    border: 1px solid #C9CAD6;
+    background-color: #E9DFFE;
+    border: 1px solid #D5C2FC;
     border-radius: 6px;
     padding: 2px 6px ;
     font-size: 12px;
@@ -98,15 +100,28 @@ section {
 }
 
 #help:hover {
-    background-color: #C9CAD6;
-    border: 1px solid #AFB0BC;
+    background-color: #D5C2FC;
+    border: 1px solid #C1A1FA;
+    cursor: pointer;
 }
 
 .badge {
     background-color: #F6F2FE;
-    color: #7C5FAB;
+    color: #7C5FAB !important;
     border: 1px solid #E9DFFE;
     border-radius: 2px;
     padding: 1px 2px;
     margin-left: 4px;
+}
+
+.divider {
+    min-height: 1px;
+    background: #7C5FAB;
+    margin: 48px;
+}
+
+h1 {
+    padding: 24px 0;
+    letter-spacing: -1.5px;
+    font-weight: 600 !important;
 }

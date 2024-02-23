@@ -82,4 +82,39 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('bgInput').addEventListener('input', function() {
         convert();
     });
+
+    document.getElementById('convertInput').addEventListener('input', function() {
+        table();
+    });
 });
+
+function table() {
+    let convertInput = document.getElementById('convertInput').value;
+    let convertColourBox = document.getElementById('convertColourBox');
+    let convertColour = rgb(convertInput);
+
+    let toRGB = culori.converter('rgb');
+    let toOKLCh = culori.converter('oklch');
+
+    let inputValue = document.getElementById('convertInput').value;
+
+    let inputRGB = toRGB(inputValue);
+    let inputHex = culori.formatHex(toRGB(inputValue));
+    let inputOKLCh = toOKLCh(inputValue);
+
+    if (convertColour === undefined) {
+        document.getElementById('convertEnter').style.backgroundColor = '#FFF0EF';
+        document.getElementById('convertEnter').style.border = '1px solid #FFDBDA';
+        document.getElementById('convertSpace').textContent = "?";
+        document.getElementById('convertColourBox').style.backgroundColor = '#FFF0EF';
+        document.getElementById('convertColourBox').style.border = '1px solid #FFDBDA';
+    } else {
+        document.getElementById('convertEnter').style.backgroundColor = '#F2F3FB';
+        document.getElementById('convertEnter').style.border = '1px solid #C9CAD6';
+        document.getElementById('convertColourBox').style.backgroundColor = `${convertColour.mode}(${convertColour.r*255}, ${convertColour.g*255}, ${convertColour.b*255})`;
+        document.getElementById('convertColourBox').style.border = '1px solid #C9CAD6';
+        document.getElementById('colourRGB').textContent = `rgb(${inputRGB.r*255}, ${inputRGB.g*255}, ${inputRGB.b*255})`;
+        document.getElementById('colourHex').textContent = inputHex;
+        document.getElementById('colourOKLCh').textContent = `${inputOKLCh.mode}(${(inputOKLCh.l*100).toFixed(2)}% ${inputOKLCh.c.toFixed(3)} ${inputOKLCh.h.toFixed(2)})`;
+    };
+};
